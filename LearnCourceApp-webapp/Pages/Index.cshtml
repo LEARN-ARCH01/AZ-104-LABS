@@ -1,0 +1,111 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "LearnCource - Home";
+}
+
+<div class="hero">
+    <div class="overlay">
+        <h1>🚀 Welcome to <span class="brand">LearnCource</span></h1>
+        <p>Your gateway to mastering new skills online</p>
+        <a class="btn" href="/courses">Start Learning</a>
+    </div>
+</div>
+
+<div class="features">
+    <div class="feature-card">
+        <h2>📚 Professional Courses</h2>
+        <p>Curated by industry experts to boost your career growth.</p>
+    </div>
+    <div class="feature-card">
+        <h2>⚡ Flexible Learning</h2>
+        <p>Access courses anytime, anywhere — at your own pace.</p>
+    </div>
+    <div class="feature-card">
+        <h2>🌍 Global Community</h2>
+        <p>Join thousands of learners worldwide and collaborate.</p>
+    </div>
+</div>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #f5f6fa;
+        color: #333;
+    }
+
+    /* Hero Section */
+    .hero {
+        height: 100vh;
+        background: linear-gradient(135deg, rgba(102,126,234,0.9), rgba(118,75,162,0.9)), url("https://source.unsplash.com/1600x900/?education,technology") no-repeat center center/cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        position: relative;
+    }
+
+    .overlay h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .overlay .brand {
+        color: #ffcc00;
+    }
+
+    .overlay p {
+        font-size: 1.4rem;
+        margin-bottom: 2rem;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 15px 30px;
+        background: #ffcc00;
+        color: #333;
+        font-size: 1.2rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+        .btn:hover {
+            background: #ffd633;
+            transform: translateY(-3px);
+        }
+
+    /* Features Section */
+    .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        padding: 3rem;
+    }
+
+    .feature-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+        text-align: center;
+    }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .feature-card h2 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .feature-card p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+</style>

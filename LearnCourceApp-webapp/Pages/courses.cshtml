@@ -1,0 +1,72 @@
+﻿@page
+@model LearnCourceApp.Pages.CoursesModel
+@{
+    ViewData["Title"] = "Courses";
+}
+
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: #fff;
+        margin: 0;
+        padding: 2rem;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .course-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+
+    .course-card {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 1.5rem;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+        .course-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+    .course-title {
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    .course-price {
+        font-size: 1.2rem;
+        color: #ffcc00;
+        font-weight: bold;
+    }
+</style>
+
+<h1>Available Courses 🚀</h1>
+
+<div class="course-container">
+    @if (Model.CourseList != null && Model.CourseList.Any())
+    {
+        foreach (var course in Model.CourseList)
+        {
+            <div class="course-card">
+                <div class="course-title">@course.Name</div>
+                <div class="course-price">$@course.Price</div>
+            </div>
+        }
+    }
+    else
+    {
+        <p>No courses available at the moment. Please check back later.</p>
+    }
+</div>
